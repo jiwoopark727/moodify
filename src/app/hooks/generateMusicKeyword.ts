@@ -41,12 +41,15 @@ export function generateMusicKeyword(
     화남: ['angry', 'hardcore', 'intense'],
   };
 
+  // 추후 장르도 선택할 수 있게 하면 괜찮을듯?
+  // const GenreKeywordArray = ['music', 'playlist', 'beats', 'mix'];
+
   const weatherWords = getRandomKeyword(weatherKeywordMap[weather] ?? []);
   const emotionWords = getRandomKeyword(emotionKeywordMap[emotion] ?? []);
+  // const genreWords = getRandomKeyword(GenreKeywordArray);
 
   // 키워드 조합을 무작위로 하나 선택
-  const keyword = `${emotionWords} ${weatherWords} music`.trim();
-  // music 말고 playlist 나 mix도 고려해보기 이건 음악 api 적용 후
+  const keyword = `${emotionWords} ${weatherWords} mood playlist`.trim();
 
   return keyword;
 }

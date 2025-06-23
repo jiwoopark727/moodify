@@ -22,7 +22,7 @@ export default function WeatherInfo({
   if (loading || !weather) return <p>날씨 정보를 가져오는 중...</p>;
 
   return (
-    <div className='flex items-center gap-2 text-sm text-gray-200'>
+    <div className='flex items-center gap-2 text-sm'>
       <Image
         src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
         alt='weather icon'

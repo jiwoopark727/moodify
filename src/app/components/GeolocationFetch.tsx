@@ -8,7 +8,7 @@ export default function WeatherFetch() {
   if (error) return <p className='text-red-400'>{error}</p>;
 
   return (
-    <div className='text-sm text-gray-300'>
+    <div className='text-sm'>
       {coords ? (
         <p>
           현재 위치: 위도 {coords.lat.toFixed(2)}, 경도 {coords.lon.toFixed(2)}

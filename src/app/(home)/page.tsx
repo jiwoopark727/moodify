@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import '../../app/globals.css';
 import EmotionSelector from '../components/EmotionSelector';
-import WeatherFetch from '../components/GeolocationFetch';
+import GeolocationFetch from '../components/GeolocationFetch';
 import WeatherInfo from '../components/WeatherInfo';
 import { generateMusicKeyword } from '../hooks/generateMusicKeyword';
 import {
@@ -13,6 +13,7 @@ import {
   // useRecoilState,
   // useRecoilValue,
 } from 'recoil';
+import MusicRecommendations from '../components/MusicRecommendations';
 
 type Weather =
   | '맑음'
@@ -59,9 +60,9 @@ export default function Home() {
 
   return (
     <RecoilRoot>
-      <div>
-        <div className='bg-[#303030] w-[400px] h-[700px] rounded-md pt-[200px] pl-[20px]'>
-          <WeatherFetch />
+      <div className='grid grid-flow-col grid-cols-2'>
+        <div className='bg-[#b1b1b1] w-[600px] h-[700px] rounded-md pt-[200px] pl-[20px]'>
+          <GeolocationFetch />
           <WeatherInfo onFetch={(e) => setWeather(e)} />
           <EmotionSelector onSelect={(e) => setEmotion(e)} />
           {emotion && (
@@ -69,7 +70,12 @@ export default function Home() {
               선택한 감정 상태: <strong>{emotion}</strong>
             </p>
           )}
-          {keyword}
+          <span className='mt-[20px]'>검색 키워드 랜덤 조합 : {keyword}</span>
+        </div>
+        <div>
+          {weather && emotion && (
+            <MusicRecommendations weather={weather} emotion={emotion} />
+          )}
         </div>
       </div>
     </RecoilRoot>
