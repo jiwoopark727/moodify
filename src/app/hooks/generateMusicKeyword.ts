@@ -39,6 +39,7 @@ export function generateMusicKeyword(
 
   // 키워드 조합을 무작위로 하나 선택
   const keyword = `${emotionWords[0]} ${weatherWords[0]} music`;
+  // music 말고 playlist 나 mix도 고려해보기 이건 음악 api 적용 후
 
   return keyword;
 }
