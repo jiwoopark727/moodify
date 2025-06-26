@@ -6,13 +6,6 @@ import EmotionSelector from '../components/EmotionSelector';
 import GeolocationFetch from '../components/GeolocationFetch';
 import WeatherInfo from '../components/WeatherInfo';
 import { generateMusicKeyword } from '../hooks/generateMusicKeyword';
-import {
-  RecoilRoot,
-  // atom,
-  // selector,
-  // useRecoilState,
-  // useRecoilValue,
-} from 'recoil';
 import MusicRecommendations from '../components/MusicRecommendations';
 
 type Weather =
@@ -59,25 +52,23 @@ export default function Home() {
   }, [weather, emotion]);
 
   return (
-    <RecoilRoot>
-      <div className='grid grid-flow-col grid-cols-2'>
-        <div className='bg-[#b1b1b1] w-[600px] h-[700px] rounded-md pt-[200px] pl-[20px]'>
-          <GeolocationFetch />
-          <WeatherInfo onFetch={(e) => setWeather(e)} />
-          <EmotionSelector onSelect={(e) => setEmotion(e)} />
-          {emotion && (
-            <p className='mt-4 text-md'>
-              선택한 감정 상태: <strong>{emotion}</strong>
-            </p>
-          )}
-          <span className='mt-[20px]'>검색 키워드 랜덤 조합 : {keyword}</span>
-        </div>
-        <div>
-          {weather && emotion && (
-            <MusicRecommendations weather={weather} emotion={emotion} />
-          )}
-        </div>
+    <div className='grid grid-flow-col grid-cols-2'>
+      <div className='bg-[#b1b1b1] w-[600px] h-[700px] rounded-md pt-[200px] pl-[20px]'>
+        <GeolocationFetch />
+        <WeatherInfo onFetch={(e) => setWeather(e)} />
+        <EmotionSelector onSelect={(e) => setEmotion(e)} />
+        {emotion && (
+          <p className='mt-4 text-md'>
+            선택한 감정 상태: <strong>{emotion}</strong>
+          </p>
+        )}
+        <span className='mt-[20px]'>검색 키워드 랜덤 조합 : {keyword}</span>
       </div>
-    </RecoilRoot>
+      <div>
+        {weather && emotion && (
+          <MusicRecommendations weather={weather} emotion={emotion} />
+        )}
+      </div>
+    </div>
   );
 }

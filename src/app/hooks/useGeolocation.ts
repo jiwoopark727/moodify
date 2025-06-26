@@ -25,7 +25,12 @@ export default function useGeolocation() {
         });
       },
       (err) => {
-        setError(`위치 정보를 가져오는 데 실패했어요.`);
+        setError('위치 정보를 가져오는 데 실패했어요.');
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0,
       }
     );
   }, []);
