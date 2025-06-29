@@ -1,6 +1,7 @@
 import '../../app/globals.css';
 import EmotionSelector from '../components/EmotionSelector';
 import InitGeolocation from '../components/InitGeolocation';
+import KeywordGenerator from '../components/KeywordGenerator';
 import WeatherInfo from '../components/WeatherInfo';
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <br />
         <h2 className='text-[14px] font-bold'>오늘 기분을 선택해 주세요</h2>
         <EmotionSelector />
+        <KeywordGenerator />
       </div>
     </div>
   );

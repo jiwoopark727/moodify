@@ -2,18 +2,20 @@
 
 import { useEmotionStore } from '../stores/useEmotionStore';
 
+type Emotion = '기쁨' | '슬픔' | '우울함' | '편안함' | '설렘' | '화남' | null;
+
 type EmotionOption = {
-  mood: string;
+  mood: Emotion;
   emoji: string;
 };
 
 const EMOTIONS: EmotionOption[] = [
   { mood: '기쁨', emoji: '😊' },
   { mood: '슬픔', emoji: '😢' },
-  { mood: '분노', emoji: '😡' },
+  { mood: '우울함', emoji: '😞' },
   { mood: '편안함', emoji: '😌' },
-  { mood: '불안', emoji: '🥶' },
   { mood: '설렘', emoji: '😳' },
+  { mood: '화남', emoji: '😡' },
 ];
 
 export default function EmotionSelector() {
@@ -25,9 +27,9 @@ export default function EmotionSelector() {
         <button
           key={item.mood}
           onClick={() => setEmotion(item.mood)}
-          className={`px-4 py-2 rounded-md border ${
+          className={`px-2 py-1 rounded-[15px] border mt-[10px] ${
             emotion === item.mood
-              ? 'bg-blue-500 text-white'
+              ? 'bg-[#565656] text-white'
               : 'bg-white text-black'
           }`}
         >
