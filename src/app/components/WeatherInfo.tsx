@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import useFetchWeather from '../hooks/useFetchWeather';
-import { useWeatherStore } from '../store/useWeatherStore';
+import { useWeatherStore } from '../stores/useWeatherStore';
 
 export default function WeatherInfo() {
   useFetchWeather(); // 날씨 정보 요청

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useGeolocationStore } from '../store/useGeolocationStore';
-import { useWeatherStore } from '../store/useWeatherStore';
+import { useGeolocationStore } from '../stores/useGeolocationStore';
+import { useWeatherStore } from '../stores/useWeatherStore';
 
 const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_KEY!;
 

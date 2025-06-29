@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useGeolocationStore } from '../store/useGeolocationStore';
+import { useGeolocationStore } from '../stores/useGeolocationStore';
 
 export default function InitGeolocation() {
   const setCoords = useGeolocationStore((state) => state.setCoords);
