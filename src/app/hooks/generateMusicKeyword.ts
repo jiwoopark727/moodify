@@ -42,14 +42,14 @@ export function generateMusicKeyword(
   };
 
   // 추후 장르도 선택할 수 있게 하면 괜찮을듯?
-  // const GenreKeywordArray = ['music', 'playlist', 'beats', 'mix'];
+  const GenreKeywordArray = ['music', 'playlist', 'beats', 'mix'];
 
   const weatherWords = getRandomKeyword(weatherKeywordMap[weather] ?? []);
   const emotionWords = getRandomKeyword(emotionKeywordMap[emotion] ?? []);
-  // const genreWords = getRandomKeyword(GenreKeywordArray);
+  const genreWords = getRandomKeyword(GenreKeywordArray);
 
   // 키워드 조합을 무작위로 하나 선택
-  const keyword = `${emotionWords} ${weatherWords} mood playlist`.trim();
+  const keyword = `${emotionWords} ${weatherWords} ${genreWords}`.trim();
 
   return keyword;
 }
