@@ -40,6 +40,7 @@ export default function useFetchWeather() {
             icon: data.weather[0].icon,
             city: data.name,
           });
+          console.log(data.main);
         } else {
           setError(data.message || '날씨 정보 요청 실패');
         }
