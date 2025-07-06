@@ -7,7 +7,7 @@ export default function Navigation() {
 
   return (
     // 전체를 감싸는 박스
-    <div className='w-full justify-items-center mt-36'>
+    <div className='w-full mt-auto mb-[5vh] z-50 justify-items-center'>
       {/* 네비바 박스 */}
       <div className='rounded-[40px] w-[85%] bg-[#fff] h-[9vh] flex items-center justify-center shadow-[0_3px_8px_rgba(0,0,0,0.24)]'>
         {/* 버튼 2개를 한 번에 감싸는 박스 */}

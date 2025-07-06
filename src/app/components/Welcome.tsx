@@ -26,7 +26,7 @@ export default function Welcome() {
         </span>
         , {month} {day}th
       </p>
-      <p className='flex justify-center pt-[8vh] text-[24px] font-semibold'>
+      <p className='flex justify-center pt-[7vh] text-[24px] font-semibold'>
         How’s your mood today?
       </p>
     </>
