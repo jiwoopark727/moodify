@@ -1,9 +1,22 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Navigation() {
-  const [activeTab, setActiveTab] = useState<'today' | 'timeline'>('today');
+  const [activeTab, setActiveTab] = useState<'today' | 'timeline' | null>(
+    'today'
+  );
+
+  const router = useRouter();
+
+  const handleTodayClick = () => {
+    router.push('/');
+  };
+
+  const handleTimelineClick = () => {
+    router.push('/timeline');
+  };
 
   return (
     // 전체를 감싸는 박스
@@ -21,7 +34,10 @@ export default function Navigation() {
             }`}
           >
             <button
-              onClick={() => setActiveTab('today')}
+              onClick={() => {
+                setActiveTab('today');
+                handleTodayClick();
+              }}
               className='w-full h-full cursor-pointer'
             >
               Today
@@ -36,7 +52,10 @@ export default function Navigation() {
             }`}
           >
             <button
-              onClick={() => setActiveTab('timeline')}
+              onClick={() => {
+                setActiveTab('timeline');
+                handleTimelineClick();
+              }}
               className='w-full h-full cursor-pointer'
             >
               Timeline

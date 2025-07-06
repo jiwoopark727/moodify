@@ -12,7 +12,7 @@ export default function Welcome() {
   );
   return (
     <>
-      <p className='flex justify-center pt-[5vh] font-bold text-[32px] text-[#ed9d12]'>
+      <p className='flex justify-center mt-[5vh] font-bold text-[32px] text-[#ed9d12]'>
         Good Morning
       </p>
       <p className='flex justify-center text-[20px]'>

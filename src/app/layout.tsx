@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import '../app/fontawesome';
 
 export const metadata: Metadata = {
   title: 'Moodify',
