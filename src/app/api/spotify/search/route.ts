@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     const res = await fetch(
       `https://api.spotify.com/v1/search?q=${encodeURIComponent(
         query
-      )}&type=track&limit=10`,
+      )}&type=track&limit=20`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
