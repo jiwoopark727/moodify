@@ -1,32 +1,22 @@
 export async function getSpotifyToken() {
-  const clientId = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID!;
-  const clientSecret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET!;
+  const clientId = process.env.SPOTIFY_CLIENT_ID!;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET!;
 
   const response = await fetch('https://accounts.spotify.com/api/token', {
     method: 'POST',
     headers: {
-      Authorization: 'Basic ' + btoa(`${clientId}:${clientSecret}`),
+      Authorization:
+        'Basic ' +
+        Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
       'Content-Type': 'application/x-www-form-urlencoded',
     },
     body: 'grant_type=client_credentials',
   });
 
+  if (!response.ok) {
+    throw new Error('Failed to fetch Spotify token');
+  }
+
   const data = await response.json();
   return data.access_token;
-}
-
-export async function searchTracks(keyword: string, token: string) {
-  const query = encodeURIComponent(keyword);
-
-  const res = await fetch(
-    `https://api.spotify.com/v1/search?q=${query}&type=track&limit=10`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-
-  const data = await res.json();
-  return data.tracks.items;
 }

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { useKeywordStore } from '../stores/useKeywordStore';
-import { getSpotifyToken, searchTracks } from '../lib/spotify';
 import Image from 'next/image';
 
 export default function MusicList() {
@@ -13,14 +12,15 @@ export default function MusicList() {
   useEffect(() => {
     const fetchTracks = async () => {
       if (!keyword) return;
-
       setLoading(true);
       try {
-        const token = await getSpotifyToken();
-        const items = await searchTracks(keyword, token);
+        const res = await fetch(
+          `/api/spotify/search?q=${encodeURIComponent(keyword)}`
+        );
+        const items = await res.json();
         setTracks(items);
-      } catch (error) {
-        console.error('Spotify 검색 실패:', error);
+      } catch (err) {
+        console.error('음악 검색 실패:', err);
       } finally {
         setLoading(false);
       }
@@ -34,7 +34,7 @@ export default function MusicList() {
   console.log(tracks);
 
   return (
-    <div className='mt-10'>
+    <div>
       <h2 className='text-lg font-semibold mb-4'>🎧 Music List</h2>
       <ul className='space-y-4'>
         {tracks.map((track) => (
@@ -51,7 +51,7 @@ export default function MusicList() {
               <p className='text-[14px] text-gray-500'>
                 {track.artists[0].name}
               </p>
-              <audio controls src={track.preview_url} className='mt-2' />
+              {track.preview_url && <audio controls src={track.preview_url} />}
             </div>
           </li>
         ))}

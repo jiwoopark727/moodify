@@ -58,11 +58,9 @@ export default function Music() {
             </span>
           </div>
         </div>
-        {/* 키워드
-        <p className='mt-6 text-base font-semibold'>
-          오늘의 키워드 : {keyword}
-        </p> */}
-        <div className='w-[88%] flex flex-col items-start'>
+        {/* 키워드 */}
+        <p className='text-base font-semibold'>오늘의 키워드 : {keyword}</p>
+        <div className='w-[90%] h-[75vh] flex flex-col items-start overflow-y-scroll mt-5'>
           <MusicList />
         </div>
       </div>
