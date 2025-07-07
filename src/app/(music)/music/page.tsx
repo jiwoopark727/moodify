@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useKeywordStore } from 'Moodify/app/stores/useKeywordStore';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation';
+import MusicList from 'Moodify/app/components/MusicList';
 
 export default function Music() {
   const keyword = useKeywordStore((state) => state.keyword);
@@ -11,7 +12,11 @@ export default function Music() {
   const router = useRouter();
 
   const handleBackClick = () => {
-    router.back(); // 이전 페이지로 이동
+    if (window.history.length > 1) {
+      router.back();
+    } else {
+      router.push('/');
+    }
   };
 
   const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
@@ -28,6 +33,7 @@ export default function Music() {
   return (
     <div className='w-screen h-svh flex items-center justify-center'>
       <div className='w-[450px] h-[100vh] bg-[#fff] rounded-[70px] p-4 flex flex-col items-center'>
+        {/* 헤더 */}
         <div className='w-full relative flex items-center justify-between text-xl font-medium mt-[5vh]'>
           <span
             onClick={handleBackClick}
@@ -52,10 +58,13 @@ export default function Music() {
             </span>
           </div>
         </div>
-        {/* 키워드 */}
+        {/* 키워드
         <p className='mt-6 text-base font-semibold'>
           오늘의 키워드 : {keyword}
-        </p>
+        </p> */}
+        <div className='w-[88%] flex flex-col items-start'>
+          <MusicList />
+        </div>
       </div>
     </div>
   );

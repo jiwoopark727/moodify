@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import '../app/fontawesome';
+import './lib/fontawesome';
+import { poppins } from './../app/lib/font';
 
 export const metadata: Metadata = {
   title: 'Moodify',
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className='flex justify-center items-center bg-black'>
+    <html lang='ko'>
+      <body
+        className={`flex justify-center items-center bg-black ${poppins.className}`}
+      >
         {children}
       </body>
     </html>
