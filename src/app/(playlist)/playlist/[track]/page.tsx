@@ -1,13 +1,16 @@
 'use client';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useKeywordStore } from 'Moodify/app/stores/useKeywordStore';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { useRouter } from 'next/navigation';
-import MusicList from 'Moodify/app/components/MusicList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useParams, useRouter } from 'next/navigation';
 
-export default function Music() {
-  const keyword = useKeywordStore((state) => state.keyword);
+export default function TrackPage() {
+  const params = useParams();
+
+  const track = decodeURIComponent(params.track as string).split('-');
+
+  const trackName = track[0];
+  const trackSinger = track[1];
 
   const router = useRouter();
 
@@ -30,6 +33,7 @@ export default function Music() {
   const day = new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(
     new Date()
   );
+
   return (
     <div className='w-screen h-svh flex items-center justify-center'>
       <div className='w-[450px] h-[100vh] bg-[#fff] rounded-[70px] p-4 flex flex-col items-center'>
@@ -58,10 +62,10 @@ export default function Music() {
             </span>
           </div>
         </div>
-        {/* 키워드 */}
-        <p className='text-base font-semibold'>오늘의 키워드 : {keyword}</p>
-        <div className='w-[90%] h-[75vh] flex flex-col items-start overflow-y-scroll mt-5'>
-          <MusicList />
+        <div className='text-[14px]'>
+          <p>
+            제목: {trackName} , 가수: {trackSinger}
+          </p>
         </div>
       </div>
     </div>

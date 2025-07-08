@@ -9,7 +9,7 @@ export default function ValidationButton() {
 
   const handleGenerateClick = () => {
     if (keyword !== null) {
-      router.push('/music');
+      router.push('/playlist');
     } else {
       alert('오늘의 무드를 선택해주세요!');
     }

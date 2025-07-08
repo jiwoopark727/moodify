@@ -4,7 +4,10 @@ import './lib/fontawesome';
 import { poppins } from './../app/lib/font';
 
 export const metadata: Metadata = {
-  title: 'Moodify',
+  title: {
+    template: '%s | Moodify',
+    default: 'Moodify',
+  },
   description: 'Music made by Mood',
 };
 

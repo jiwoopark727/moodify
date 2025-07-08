@@ -7,7 +7,7 @@ import Welcome from '../components/Welcome';
 import Navigation from '../components/Navigation';
 import ValidationButton from '../components/ValidationButton';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className='w-screen h-svh flex items-center justify-center'>
       <InitGeolocation />
