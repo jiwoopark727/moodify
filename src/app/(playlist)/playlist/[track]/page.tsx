@@ -103,20 +103,32 @@ export default function TrackPage() {
             rel='0'
           />
         ) : (
-          <p className='text-sm text-gray-500 mt-[3vh]'>
-            YouTube 영상 로딩 중...
-          </p>
+          <div className='w-[400px] h-[225px] bg-gray-300 rounded-[20px] mt-[3vh]'></div>
         )}
         <div className='w-full mt-[1.5vh] px-4 mb-[2vh]'>
-          <p className='text-[16px] text-left'>
+          <p className='text-[16px] text-left mb-[0.5vh]'>
             {trackName} - {trackSinger}
           </p>
           {viewCount && publishedAt ? (
-            <p className='text-[16px] text-gray-600 mt-[0.5vh]'>
+            <span className='text-[16px] text-gray-600'>
               {Number(viewCount).toLocaleString()} views &nbsp; &nbsp;
               {formatDateToRelative(publishedAt)}
-            </p>
-          ) : null}
+            </span>
+          ) : (
+            <p className='w-[225px] h-[22px] bg-gray-300 rounded-[20px]'></p>
+          )}
+          <div>
+            <textarea
+              placeholder='Write down how you felt while listening to this music...'
+              className='w-full mt-4 p-2 border rounded-md'
+              rows={10}
+            />
+            <div className='flex justify-center'>
+              <button className='mt-[1vh] cursor-pointer border-2 border-[#ed9d12] px-4 py-2 rounded-xl hover:bg-[#ed9d12] hover:text-[#fff]'>
+                Save
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

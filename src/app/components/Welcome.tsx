@@ -1,4 +1,16 @@
 export default function Welcome() {
+  const now = new Date();
+  const hour = now.getHours();
+
+  let greeting = 'Good Morning';
+  if (hour >= 18) {
+    greeting = 'Good Night';
+  } else if (hour >= 15) {
+    greeting = 'Good Evening';
+  } else if (hour >= 12) {
+    greeting = 'Good Afternoon';
+  }
+
   const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
     new Date()
   );
@@ -13,7 +25,7 @@ export default function Welcome() {
   return (
     <>
       <p className='flex justify-center mt-[5vh] font-bold text-[32px] text-[#ed9d12]'>
-        Good Morning
+        {greeting}
       </p>
       <p className='flex justify-center text-[20px]'>
         It&apos;s&nbsp;
