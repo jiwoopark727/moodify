@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Track',
+  title: 'Track | Moodify',
+  description: 'Music made by Mood',
 };
 
 export default function HomeLayout({

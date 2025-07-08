@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 
 export default function TrackPage() {
   const [videoId, setVideoId] = useState<string | null>(null);
+  const [viewCount, setViewCount] = useState<string | null>(null);
+  const [publishedAt, setPublishedAt] = useState<string>('');
 
   const params = useParams();
   const track = decodeURIComponent(params.track as string).split('-');
@@ -40,10 +42,25 @@ export default function TrackPage() {
       );
       const data = await res.json();
       setVideoId(data.videoId);
+      setViewCount(data.viewCount);
+      setPublishedAt(data.publishedAt);
     };
 
     fetchYoutubeVideo();
   }, [trackName, trackSinger]);
+
+  function formatDateToRelative(dateString: string): string {
+    const now = new Date();
+    const date = new Date(dateString);
+    const diff = now.getTime() - date.getTime();
+    const days = diff / (1000 * 60 * 60 * 24);
+
+    if (days < 1) return '오늘';
+    if (days < 7) return `${Math.floor(days)}일 전`;
+    if (days < 30) return `${Math.floor(days / 7)}주 전`;
+    if (days < 365) return `${Math.floor(days / 30)}개월 전`;
+    return `${Math.floor(days / 365)}년 전`;
+  }
 
   return (
     <div className='w-screen h-svh flex items-center justify-center'>
@@ -73,24 +90,34 @@ export default function TrackPage() {
             </span>
           </div>
         </div>
-        <div className='text-[14px]'>
-          <p>
-            제목: {trackName} , 가수: {trackSinger}
-          </p>
-        </div>
         {videoId ? (
           <iframe
-            width='320'
-            height='180'
+            width='400'
+            height='225'
             src={`https://www.youtube.com/embed/${videoId}`}
             title='YouTube Video'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture web-share;'
             allowFullScreen
-            className='rounded-lg'
+            className='rounded-[20px] mt-[3vh]'
+            loading='lazy'
+            rel='0'
           />
         ) : (
-          <p className='text-sm text-gray-500'>YouTube 영상 로딩 중...</p>
+          <p className='text-sm text-gray-500 mt-[3vh]'>
+            YouTube 영상 로딩 중...
+          </p>
         )}
+        <div className='w-full mt-[1.5vh] px-4 mb-[2vh]'>
+          <p className='text-[16px] text-left'>
+            {trackName} - {trackSinger}
+          </p>
+          {viewCount && publishedAt ? (
+            <p className='text-[16px] text-gray-600 mt-[0.5vh]'>
+              {Number(viewCount).toLocaleString()} views &nbsp; &nbsp;
+              {formatDateToRelative(publishedAt)}
+            </p>
+          ) : null}
+        </div>
       </div>
     </div>
   );
