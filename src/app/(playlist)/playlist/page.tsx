@@ -19,15 +19,15 @@ export default function PlayListPage() {
     }
   };
 
-  const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+  const weekday = new Intl.DateTimeFormat('ko-KR', { weekday: 'long' }).format(
     new Date()
   );
 
-  const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(
+  const month = new Intl.DateTimeFormat('ko-KR', { month: 'short' }).format(
     new Date()
   );
 
-  const day = new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(
+  const day = new Intl.DateTimeFormat('ko-KR', { day: 'numeric' }).format(
     new Date()
   );
 
@@ -43,19 +43,18 @@ export default function PlayListPage() {
             <FontAwesomeIcon icon={faArrowLeft} />
           </span>
           <div className='absolute left-1/2 -translate-x-1/2'>
+            <span className='mr-1.5'>{month}</span>
+            <span className='mr-1.5'>{day}</span>
             <span
               className={
-                weekday === 'Saturday'
+                weekday === '토요일'
                   ? 'text-[#2b5bf7]'
-                  : weekday === 'Sunday'
+                  : weekday === '일요일'
                   ? 'text-[#f83b3b]'
                   : 'text-black'
               }
             >
               {weekday}
-            </span>
-            <span className='ml-1'>
-              , {month} {day}th
             </span>
           </div>
         </div>

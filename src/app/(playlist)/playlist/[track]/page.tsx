@@ -24,13 +24,13 @@ export default function TrackPage() {
     }
   };
 
-  const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+  const weekday = new Intl.DateTimeFormat('ko-KR', { weekday: 'long' }).format(
     new Date()
   );
-  const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(
+  const month = new Intl.DateTimeFormat('ko-KR', { month: 'short' }).format(
     new Date()
   );
-  const day = new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(
+  const day = new Intl.DateTimeFormat('ko-KR', { day: 'numeric' }).format(
     new Date()
   );
 
@@ -74,19 +74,18 @@ export default function TrackPage() {
             <FontAwesomeIcon icon={faArrowLeft} />
           </span>
           <div className='absolute left-1/2 -translate-x-1/2'>
+            <span className='mr-1.5'>{month}</span>
+            <span className='mr-1.5'>{day}</span>
             <span
               className={
-                weekday === 'Saturday'
+                weekday === '토요일'
                   ? 'text-[#2b5bf7]'
-                  : weekday === 'Sunday'
+                  : weekday === '일요일'
                   ? 'text-[#f83b3b]'
                   : 'text-black'
               }
             >
               {weekday}
-            </span>
-            <span className='ml-1'>
-              , {month} {day}th
             </span>
           </div>
         </div>
@@ -111,7 +110,8 @@ export default function TrackPage() {
           </p>
           {viewCount && publishedAt ? (
             <span className='text-[16px] text-gray-600'>
-              {Number(viewCount).toLocaleString()} views &nbsp; &nbsp;
+              {Number(viewCount).toLocaleString()}
+              <span className='ml-[2px]'>회</span>&nbsp; &nbsp;
               {formatDateToRelative(publishedAt)}
             </span>
           ) : (
@@ -125,7 +125,7 @@ export default function TrackPage() {
             />
             <div className='flex justify-center'>
               <button className='mt-[1vh] cursor-pointer border-2 border-[#ed9d12] px-4 py-2 rounded-xl hover:bg-[#ed9d12] hover:text-[#fff]'>
-                Save
+                저장
               </button>
             </div>
           </div>

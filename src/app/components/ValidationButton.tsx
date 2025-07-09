@@ -19,9 +19,9 @@ export default function ValidationButton() {
     <>
       <button
         onClick={handleGenerateClick}
-        className='mt-[6vh] cursor-pointer border-2 border-[#ed9d12] px-6 py-3 rounded-xl hover:bg-[#ed9d12] hover:text-[#fff]'
+        className='mt-[6vh] cursor-pointer border-2 border-[#ed9d12] px-5 py-2.5 rounded-xl hover:bg-[#ed9d12] hover:text-[#fff]'
       >
-        Generate
+        생성
       </button>
     </>
   );

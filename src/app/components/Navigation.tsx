@@ -40,7 +40,7 @@ export default function Navigation() {
               }}
               className='w-full h-full cursor-pointer'
             >
-              Today
+              투데이
             </button>
           </div>
           {/* 각 버튼을 1개 씩 감싸는 박스 */}
@@ -58,7 +58,7 @@ export default function Navigation() {
               }}
               className='w-full h-full cursor-pointer'
             >
-              Timeline
+              타임라인
             </button>
           </div>
         </div>

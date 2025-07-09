@@ -2,24 +2,24 @@ export default function Welcome() {
   const now = new Date();
   const hour = now.getHours();
 
-  let greeting = 'Good Morning';
+  let greeting = '좋은 아침이에요';
   if (hour >= 18) {
-    greeting = 'Good Night';
+    greeting = '아름다운 밤이에요';
   } else if (hour >= 15) {
-    greeting = 'Good Evening';
+    greeting = '평화로운 저녁이에요';
   } else if (hour >= 12) {
-    greeting = 'Good Afternoon';
+    greeting = '따사로운 오후에요';
   }
 
-  const weekday = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+  const weekday = new Intl.DateTimeFormat('ko-KR', { weekday: 'long' }).format(
     new Date()
   );
 
-  const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(
+  const month = new Intl.DateTimeFormat('ko-KR', { month: 'short' }).format(
     new Date()
   );
 
-  const day = new Intl.DateTimeFormat('en-US', { day: 'numeric' }).format(
+  const day = new Intl.DateTimeFormat('ko-KR', { day: 'numeric' }).format(
     new Date()
   );
   return (
@@ -27,19 +27,19 @@ export default function Welcome() {
       <p className='flex justify-center mt-[5vh] font-bold text-[32px] text-[#ed9d12]'>
         {greeting}
       </p>
-      <p className='flex justify-center text-[20px]'>
-        It&apos;s&nbsp;
+      <p className='flex justify-center text-[20px] mt-[1vh]'>
+        <span className='mr-1.5'>{month}</span>
+        <span className='mr-1.5'>{day}</span>
         <span
           className={`${
-            weekday === 'Saturday' ? 'text-[#2b5bf7]' : 'text-black'
-          } ${weekday === 'Sunday' ? 'text-[#f83b3b]' : 'text-black'}`}
+            weekday === '토요일' ? 'text-[#2b5bf7]' : 'text-black'
+          } ${weekday === '일요일' ? 'text-[#f83b3b]' : 'text-black'}`}
         >
           {weekday}
         </span>
-        , {month} {day}th
       </p>
-      <p className='flex justify-center pt-[7vh] text-[24px] font-semibold'>
-        How’s your mood today?
+      <p className='flex justify-center mt-[6vh] text-[24px] font-semibold'>
+        당신의 오늘 하루는 어땠나요?
       </p>
     </>
   );
