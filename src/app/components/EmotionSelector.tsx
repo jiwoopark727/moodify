@@ -22,13 +22,13 @@ export default function EmotionSelector() {
   const { emotion, setEmotion } = useEmotionStore();
 
   return (
-    <div className='w-[50%] grid grid-cols-2 gap-y-12 justify-items-center mt-[3vh]'>
+    <div className='w-[55%] grid grid-cols-2 gap-y-12 justify-items-center mt-[3vh]'>
       {EMOTIONS.map((item) => (
         <button
           key={item.mood}
           onClick={() => setEmotion(item.mood)}
-          className={`px-[3px] pt-[3px] rounded-[30px] border-[3px] border-[#80A867] my-1 text-[36px] cursor-pointer ${
-            emotion === item.mood ? 'border-[#80A867]' : 'border-transparent'
+          className={`rounded-[28px] border-[2px] border-[#4F7942] px-[3px] pt-[3px] my-2 text-[34px] cursor-pointer ${
+            emotion === item.mood ? 'border-[#4F7942]' : 'border-transparent'
           }`}
         >
           {item.emoji}

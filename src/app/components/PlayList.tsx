@@ -42,10 +42,9 @@ export default function PlayList() {
 
   return (
     <div>
-      <h2 className='text-[20px] font-[600] mb-4'>🎧 Playlist</h2>
       {loading ? (
-        <div className='flex justify-center items-center h-[60vh] w-[373px]'>
-          플리를 생성하는 중입니다...
+        <div className='flex flex-col justify-center items-center h-[60vh] w-[373px]'>
+          <p className='text-base mb-4'>플리를 생성하는 중입니다...</p>
           <Loader />
         </div>
       ) : (
@@ -74,7 +73,7 @@ export default function PlayList() {
                       onClick={() =>
                         handleYoutubeClick(track.name, track.artists[0].name)
                       }
-                      className='text-blue-500 underline text-[16px] cursor-pointer p-3'
+                      className='text-[#4F7942] underline text-[16px] cursor-pointer p-3 font-semibold'
                     >
                       YouTube로 듣기
                     </button>

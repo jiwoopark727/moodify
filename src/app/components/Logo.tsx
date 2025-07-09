@@ -10,7 +10,7 @@ export default function Logo() {
   };
 
   return (
-    <div className='text-[#80A867] font-[1000] text-[24px] mt-[5vh]'>
+    <div className='text-[#4F7942] font-[1000] text-[24px] mt-[5vh]'>
       <span onClick={handleLogoClick} className='cursor-pointer px-4 py-2'>
         Moodify🎧
       </span>

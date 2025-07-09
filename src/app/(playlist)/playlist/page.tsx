@@ -34,12 +34,13 @@ export default function PlayListPage() {
 
   return (
     <div className='w-screen h-svh flex items-center justify-center'>
-      <div className='w-[450px] h-[100vh] bg-[#fff] rounded-[70px] p-4 flex flex-col items-center'>
+      <div className='w-[450px] h-[100vh] bg-[#fcfcfc] rounded-[70px] p-4 flex flex-col items-center'>
         {/* 헤더 */}
         <Header />
-        {/* 키워드 */}
-        {/* <p className='text-base font-semibold'>오늘의 키워드 : {keyword}</p> */}
-        <div className='w-[90%] h-[75vh] flex flex-col items-start overflow-y-scroll mt-5'>
+        <h2 className='text-[20px] font-[600] self-start pl-[4vw]'>
+          🎧 Playlist
+        </h2>
+        <div className='w-[90%] h-[72vh] flex flex-col items-start overflow-y-scroll mt-5'>
           <PlayList />
         </div>
       </div>
