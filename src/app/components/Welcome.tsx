@@ -6,9 +6,9 @@ export default function Welcome() {
   if (hour >= 18) {
     greeting = '아름다운 밤이에요';
   } else if (hour >= 15) {
-    greeting = '평화로운 저녁이에요';
+    greeting = '평화로운 오후에요';
   } else if (hour >= 12) {
-    greeting = '따사로운 오후에요';
+    greeting = '따사로운 낮이에요';
   }
 
   const weekday = new Intl.DateTimeFormat('ko-KR', { weekday: 'long' }).format(

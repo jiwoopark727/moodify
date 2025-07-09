@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Playlist',
+  title: '플레이리스트',
 };
 
 export default function HomeLayout({

@@ -1,11 +1,12 @@
 import { Poppins } from 'next/font/google';
-import { Noto_Sans_KR } from 'next/font/google';
 
 export const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   display: 'swap',
 });
+
+import { Noto_Sans_KR } from 'next/font/google';
 
 export const notoSansKR = Noto_Sans_KR({
   weight: ['400', '500', '700'],

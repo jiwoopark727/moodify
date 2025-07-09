@@ -42,10 +42,10 @@ export default function PlayList() {
 
   return (
     <div>
-      <h2 className='text-[16px] font-[600] mb-4'>🎧 플레이리스트</h2>
+      <h2 className='text-[20px] font-[600] mb-4'>🎧 플레이리스트</h2>
       {loading ? (
         <div className='flex justify-center items-center h-[60vh] w-[373px]'>
-          음악을 검색하는 중입니다...
+          플리를 생성하는 중입니다...
           <Loader />
         </div>
       ) : (
@@ -55,35 +55,31 @@ export default function PlayList() {
               <Image
                 src={track.album.images[1].url}
                 alt={track.name}
-                className='w-[50px] h-[50x]'
+                className='w-[35px] h-[35x]'
                 width={10}
                 height={10}
               />
-              <div>
-                <p className='text-[10px] pl-1'>{track.name}</p>
-                <p className='text-[10px] text-gray-500 pl-1'>
-                  {track.artists[0].name}
-                </p>
-                {track.preview_url ? (
-                  <audio controls src={track.preview_url} />
-                ) : (
-                  <button
-                    onClick={
-                      //   () => {
-                      //   const query = `${track.name} ${track.artists[0].name}`;
-                      //   const youtubeUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(
-                      //     query
-                      //   )}`;
-                      //   window.open(youtubeUrl, '_blank');
-                      // }
-                      () =>
+              <div className='flex items-center justify-between w-full'>
+                <div>
+                  <p className='text-[16px] pl-1'>{track.name}</p>
+                  <p className='text-[16px] text-gray-500 pl-1'>
+                    {track.artists[0].name}
+                  </p>
+                </div>
+                <div className='shrink-0 '>
+                  {track.preview_url ? (
+                    <audio controls src={track.preview_url} />
+                  ) : (
+                    <button
+                      onClick={() =>
                         handleYoutubeClick(track.name, track.artists[0].name)
-                    }
-                    className='text-blue-500 underline text-[10px] cursor-pointer p-1'
-                  >
-                    🔎YouTube로 듣기
-                  </button>
-                )}
+                      }
+                      className='text-blue-500 underline text-[16px] cursor-pointer p-3'
+                    >
+                      YouTube로 듣기
+                    </button>
+                  )}
+                </div>
               </div>
             </li>
           ))}

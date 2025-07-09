@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Track | Moodify',
+  title: '트랙 | Moodify',
   description: 'Music made by Mood',
 };
 

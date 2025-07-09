@@ -38,7 +38,7 @@ export default function Navigation() {
                 setActiveTab('today');
                 handleTodayClick();
               }}
-              className='w-full h-full cursor-pointer'
+              className='w-full h-full cursor-pointer text-[20px]'
             >
               투데이
             </button>
@@ -56,7 +56,7 @@ export default function Navigation() {
                 setActiveTab('timeline');
                 handleTimelineClick();
               }}
-              className='w-full h-full cursor-pointer'
+              className='w-full h-full cursor-pointer text-[20px]'
             >
               타임라인
             </button>

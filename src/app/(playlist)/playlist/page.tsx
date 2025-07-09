@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation';
 import PlayList from 'Moodify/app/components/PlayList';
+import Header from 'Moodify/app/components/Header';
 
 export default function PlayListPage() {
   // const keyword = useKeywordStore((state) => state.keyword);
@@ -35,29 +36,7 @@ export default function PlayListPage() {
     <div className='w-screen h-svh flex items-center justify-center'>
       <div className='w-[450px] h-[100vh] bg-[#fff] rounded-[70px] p-4 flex flex-col items-center'>
         {/* 헤더 */}
-        <div className='w-full relative flex items-center justify-between text-xl font-medium mt-[5vh]'>
-          <span
-            onClick={handleBackClick}
-            className='ml-1 cursor-pointer p-2 text-2xl'
-          >
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </span>
-          <div className='absolute left-1/2 -translate-x-1/2'>
-            <span className='mr-1.5'>{month}</span>
-            <span className='mr-1.5'>{day}</span>
-            <span
-              className={
-                weekday === '토요일'
-                  ? 'text-[#2b5bf7]'
-                  : weekday === '일요일'
-                  ? 'text-[#f83b3b]'
-                  : 'text-black'
-              }
-            >
-              {weekday}
-            </span>
-          </div>
-        </div>
+        <Header />
         {/* 키워드 */}
         {/* <p className='text-base font-semibold'>오늘의 키워드 : {keyword}</p> */}
         <div className='w-[90%] h-[75vh] flex flex-col items-start overflow-y-scroll mt-5'>
