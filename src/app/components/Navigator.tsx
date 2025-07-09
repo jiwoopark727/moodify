@@ -26,7 +26,7 @@ export default function Navigation() {
           <div
             className={`h-full w-full flex items-center justify-center border-t-4 ${
               navigator === 'today'
-                ? 'border-[#ed9d12] rounded-t-[1px]'
+                ? 'border-[#80A867] rounded-t-[1px]'
                 : 'border-transparent'
             }`}
           >
@@ -44,7 +44,7 @@ export default function Navigation() {
           <div
             className={`h-full w-full flex items-center justify-center border-t-4 ${
               navigator === 'timeline'
-                ? 'border-[#ed9d12] rounded-t-[1px]'
+                ? 'border-[#80A867] rounded-t-[1px]'
                 : 'border-transparent'
             }`}
           >

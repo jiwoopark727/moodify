@@ -1,6 +1,7 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/navigation';
+import Logo from './Logo';
 
 export default function Header() {
   const router = useRouter();
@@ -22,28 +23,31 @@ export default function Header() {
     new Date()
   );
   return (
-    <div className='w-full relative flex items-center justify-between text-[24px] font-medium mt-[5vh]'>
-      <span
-        onClick={handleBackClick}
-        className='ml-1 cursor-pointer px-3 py-2 text-[24px]'
-      >
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </span>
-      <div className='absolute left-1/2 -translate-x-1/2'>
-        <span className='mr-1.5'>{month}</span>
-        <span className='mr-1.5'>{day}</span>
+    <>
+      <Logo />
+      <div className='w-full relative flex items-center justify-between text-[24px] font-medium'>
         <span
-          className={
-            weekday === '토요일'
-              ? 'text-[#2b5bf7]'
-              : weekday === '일요일'
-              ? 'text-[#f83b3b]'
-              : 'text-black'
-          }
+          onClick={handleBackClick}
+          className='ml-1 cursor-pointer px-3 py-2 text-[24px]'
         >
-          {weekday}
+          <FontAwesomeIcon icon={faArrowLeft} />
         </span>
+        <div className='absolute left-1/2 -translate-x-1/2'>
+          <span className='mr-1.5'>{month}</span>
+          <span className='mr-1.5'>{day}</span>
+          <span
+            className={
+              weekday === '토요일'
+                ? 'text-[#2b5bf7]'
+                : weekday === '일요일'
+                ? 'text-[#f83b3b]'
+                : 'text-black'
+            }
+          >
+            {weekday}
+          </span>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

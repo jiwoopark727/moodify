@@ -1,14 +1,16 @@
+import Logo from './Logo';
+
 export default function Welcome() {
   const now = new Date();
   const hour = now.getHours();
 
-  let greeting = '좋은 아침이에요';
+  let greeting = 'Good Morning';
   if (hour >= 18) {
-    greeting = '아름다운 밤이에요';
+    greeting = 'Good Night';
   } else if (hour >= 15) {
-    greeting = '평화로운 오후에요';
+    greeting = 'Good Evening';
   } else if (hour >= 12) {
-    greeting = '따사로운 낮이에요';
+    greeting = 'Good Afternoon';
   }
 
   const weekday = new Intl.DateTimeFormat('ko-KR', { weekday: 'long' }).format(
@@ -24,7 +26,8 @@ export default function Welcome() {
   );
   return (
     <>
-      <p className='flex justify-center mt-[5vh] font-bold text-[32px] text-[#ed9d12]'>
+      <Logo />
+      <p className='flex justify-center mt-[1vh] font-semibold text-[32px]'>
         {greeting}
       </p>
       <p className='flex justify-center text-[20px] mt-[1vh]'>
@@ -38,7 +41,7 @@ export default function Welcome() {
           {weekday}
         </span>
       </p>
-      <p className='flex justify-center mt-[6vh] text-[24px] font-semibold'>
+      <p className='flex justify-center mt-[5vh] text-[24px] font-semibold'>
         당신의 오늘 하루는 어땠나요?
       </p>
     </>

@@ -6,6 +6,6 @@ interface NavigatorState {
 }
 
 export const useNavigatorStore = create<NavigatorState>((set) => ({
-  navigator: null,
+  navigator: 'today',
   setNavigator: (navigator) => set({ navigator }),
 }));

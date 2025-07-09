@@ -42,7 +42,7 @@ export default function PlayList() {
 
   return (
     <div>
-      <h2 className='text-[20px] font-[600] mb-4'>🎧 플레이리스트</h2>
+      <h2 className='text-[20px] font-[600] mb-4'>🎧 Playlist</h2>
       {loading ? (
         <div className='flex justify-center items-center h-[60vh] w-[373px]'>
           플리를 생성하는 중입니다...
