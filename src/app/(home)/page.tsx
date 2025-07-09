@@ -4,7 +4,7 @@ import InitGeolocation from '../components/InitGeolocation';
 import KeywordGenerator from '../components/KeywordGenerator';
 import InitWeather from '../components/InitWeather';
 import Welcome from '../components/Welcome';
-import Navigation from '../components/Navigation';
+import Navigation from '../components/Navigator';
 import ValidationButton from '../components/ValidationButton';
 
 export default function HomePage() {

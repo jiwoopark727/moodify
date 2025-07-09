@@ -1,13 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useNavigatorStore } from '../stores/useNavigatorStore';
 
 export default function Navigation() {
-  const [activeTab, setActiveTab] = useState<'today' | 'timeline' | null>(
-    'today'
-  );
-
+  const { navigator, setNavigator } = useNavigatorStore();
   const router = useRouter();
 
   const handleTodayClick = () => {
@@ -28,15 +25,15 @@ export default function Navigation() {
           {/* 각 버튼을 1개 씩 감싸는 박스 */}
           <div
             className={`h-full w-full flex items-center justify-center border-t-4 ${
-              activeTab === 'today'
+              navigator === 'today'
                 ? 'border-[#ed9d12] rounded-t-[1px]'
                 : 'border-transparent'
             }`}
           >
             <button
               onClick={() => {
-                setActiveTab('today');
                 handleTodayClick();
+                setNavigator('today');
               }}
               className='w-full h-full cursor-pointer text-[20px]'
             >
@@ -46,15 +43,15 @@ export default function Navigation() {
           {/* 각 버튼을 1개 씩 감싸는 박스 */}
           <div
             className={`h-full w-full flex items-center justify-center border-t-4 ${
-              activeTab === 'timeline'
+              navigator === 'timeline'
                 ? 'border-[#ed9d12] rounded-t-[1px]'
                 : 'border-transparent'
             }`}
           >
             <button
               onClick={() => {
-                setActiveTab('timeline');
                 handleTimelineClick();
+                setNavigator('timeline');
               }}
               className='w-full h-full cursor-pointer text-[20px]'
             >
