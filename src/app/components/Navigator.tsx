@@ -1,11 +1,21 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useNavigatorStore } from '../stores/useNavigatorStore';
+import { useEffect } from 'react';
 
 export default function Navigation() {
+  const pathName = usePathname();
   const { navigator, setNavigator } = useNavigatorStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (pathName === '/timeline') {
+      setNavigator(pathName.substring(1));
+    } else if (pathName === '/') {
+      setNavigator('today');
+    }
+  }, [pathName]);
 
   const handleTodayClick = () => {
     router.push('/');

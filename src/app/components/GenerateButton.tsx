@@ -19,8 +19,20 @@ export default function ValidationButton() {
     if (!emotion || !weather) return alert('감정과 날씨 정보가 필요해요.');
 
     const now = new Date();
-    const date = now.toISOString().slice(0, 10); // YYYY-MM-DD
-    const time = now.toTimeString().slice(0, 5); // HH:MM
+
+    // 2025년 7월 10일 목요일
+    const date = `${now.getFullYear()}년 ${
+      now.getMonth() + 1
+    }월 ${now.getDate()}일 ${now.toLocaleDateString('ko-KR', {
+      weekday: 'long',
+    })}`;
+
+    // 오전 09:32 / 오후 02:10
+    const time = now.toLocaleTimeString('ko-KR', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
 
     addTimelineItem({
       date,
