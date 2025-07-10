@@ -7,7 +7,7 @@ export default function MoodMemo() {
   const [text, setText] = useState('');
   const addMemoItem = useMemoStore((state) => state.addMemoItem);
 
-  // Memo(로컬스토리지)에 저장하느 함수
+  // Memo(로컬스토리지)에 저장하는 함수
   const handleSaveClick = () => {
     if (!text) return alert('기분을 적어보아요!');
 

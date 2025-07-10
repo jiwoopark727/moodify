@@ -23,7 +23,7 @@ export const useMemoStore = create<MemoState>()(
       clearMemo: () => set({ memo: [] }),
     }),
     {
-      name: 'Memo', // localStorage에 저장될 키 이름
+      name: 'Memo',
     }
   )
 );

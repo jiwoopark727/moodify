@@ -3,6 +3,22 @@
 import { useMemoStore } from '../stores/useMemoStore';
 import { useTimelineStore } from '../stores/useTimelineStore';
 
+type Emotion = '기쁨' | '슬픔' | '우울함' | '편안함' | '설렘' | '화남' | null;
+
+type EmotionOption = {
+  emotion: Emotion;
+  emoji: string;
+};
+
+const EMOTIONS: EmotionOption[] = [
+  { emotion: '기쁨', emoji: '😊' },
+  { emotion: '슬픔', emoji: '😢' },
+  { emotion: '우울함', emoji: '😞' },
+  { emotion: '편안함', emoji: '😌' },
+  { emotion: '설렘', emoji: '😳' },
+  { emotion: '화남', emoji: '😡' },
+];
+
 export default function Timeline() {
   const timeline = useTimelineStore((state) => state.timeline);
   const memo = useMemoStore((state) => state.memo);
@@ -12,22 +28,36 @@ export default function Timeline() {
   }
 
   return (
-    <div className='mt-[5vh] space-y-4'>
-      {timeline.map((item) => (
-        <div key={item.date} className='border p-3 rounded-lg shadow-sm'>
-          <p>📅 {item.date}</p>
-          <p>🕒 {item.time}</p>
-          <p>🌤️ 날씨: {item.weather}</p>
-          <p>💖 감정: {item.emotion}</p>
-          <p>
-            {memo.map((item2) => (
-              <p key={item2.date}>
-                {item.date === item2.date ? <>메모: {item2.memo}</> : null}
-              </p>
-            ))}
-          </p>
-        </div>
-      ))}
+    <div className='flex justify-end mt-[5vh] w-[85%] space-y-4'>
+      <div className='w-[80%]'>
+        {timeline.map((item) => (
+          <div
+            key={item.date}
+            className='relative border p-3 rounded-lg shadow-sm'
+          >
+            {/* 오른쪽 중단 감정(이모지) */}
+            <div className='absolute top-1/2 right-2 transform -translate-y-1/2 text-[40px]'>
+              {EMOTIONS.map((item2) =>
+                item.emotion === item2.emotion ? (
+                  <span key={item2.emotion}>{item2.emoji}</span>
+                ) : null
+              )}
+            </div>
+
+            {/* 나머지 항목은 왼쪽 정렬 */}
+            <p>📅 {item.date}</p>
+            <p>⏰ {item.time}</p>
+            <p>💚 {item.weather}</p>
+            <div>
+              {memo.map((item2) =>
+                item.date === item2.date ? (
+                  <p key={item2.date}>📝 {item2.memo}</p>
+                ) : null
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ export const useTimelineStore = create<TimelineState>()(
       clearTimeline: () => set({ timeline: [] }),
     }),
     {
-      name: 'Timeline', // localStorage에 저장될 키 이름
+      name: 'Timeline',
     }
   )
 );
