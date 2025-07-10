@@ -16,10 +16,15 @@ export const useMemoStore = create<MemoState>()(
   persist(
     (set) => ({
       memo: [],
-      addMemoItem: (item) =>
-        set((state) => ({
-          memo: [...state.memo, item],
-        })),
+      addMemoItem: (newItem) =>
+        set((state) => {
+          const filteredMemo = state.memo.filter(
+            (item) => item.date !== newItem.date
+          );
+          return {
+            memo: [...filteredMemo, newItem],
+          };
+        }),
       clearMemo: () => set({ memo: [] }),
     }),
     {

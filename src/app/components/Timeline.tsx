@@ -30,11 +30,8 @@ export default function Timeline() {
   return (
     <div className='flex justify-end mt-[5vh] w-[85%] space-y-4'>
       <div className='w-[80%]'>
-        {timeline.map((item) => (
-          <div
-            key={item.date}
-            className='relative border p-3 rounded-lg shadow-sm'
-          >
+        {timeline.map((item, idx) => (
+          <div key={idx} className='relative border p-3 rounded-lg shadow-sm'>
             {/* 오른쪽 중단 감정(이모지) */}
             <div className='absolute top-1/2 right-2 transform -translate-y-1/2 text-[40px]'>
               {EMOTIONS.map((item2) =>
@@ -49,9 +46,9 @@ export default function Timeline() {
             <p>⏰ {item.time}</p>
             <p>💚 {item.weather}</p>
             <div>
-              {memo.map((item2) =>
+              {memo.map((item2, idx2) =>
                 item.date === item2.date ? (
-                  <p key={item2.date}>📝 {item2.memo}</p>
+                  <p key={idx2}>📝 {item2.memo}</p>
                 ) : null
               )}
             </div>
