@@ -28,10 +28,13 @@ export default function Timeline() {
   }
 
   return (
-    <div className='flex justify-end mt-[5vh] w-[85%] space-y-4'>
-      <div className='w-[80%]'>
+    <div className='flex justify-end mt-[5vh] w-[85%] space-y-4 overflow-y-auto h-[75vh]'>
+      <div className='w-[83%]'>
         {timeline.map((item, idx) => (
-          <div key={idx} className='relative border p-3 rounded-lg shadow-sm'>
+          <div
+            key={idx}
+            className='relative border p-3 rounded-lg shadow-sm mb-[2vh]'
+          >
             {/* 오른쪽 중단 감정(이모지) */}
             <div className='absolute top-1/2 right-2 transform -translate-y-1/2 text-[40px]'>
               {EMOTIONS.map((item2) =>
@@ -43,14 +46,22 @@ export default function Timeline() {
 
             {/* 나머지 항목은 왼쪽 정렬 */}
             <p>📅 {item.date}</p>
-            <p>⏰ {item.time}</p>
-            <p>💚 {item.weather}</p>
-            <div>
-              {memo.map((item2, idx2) =>
-                item.date === item2.date ? (
-                  <p key={idx2}>📝 {item2.memo}</p>
-                ) : null
-              )}
+            <p>
+              ⏰ {item.time} 💚 {item.weather}
+            </p>
+            <div className='w-[75%]'>
+              <div>
+                {memo.map((item2, idx2) =>
+                  item.date === item2.date ? (
+                    <div key={idx2}>
+                      <p>
+                        🎵 {item2.memo.split('@')[0]}-{item2.memo.split('@')[1]}
+                      </p>
+                      {item2.memo.split('@')[2]}
+                    </div>
+                  ) : null
+                )}
+              </div>
             </div>
           </div>
         ))}

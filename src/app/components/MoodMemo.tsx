@@ -3,7 +3,12 @@
 import { useState } from 'react';
 import { useMemoStore } from '../stores/useMemoStore';
 
-export default function MoodMemo() {
+type Props = {
+  trackName: string;
+  trackSinger: string;
+};
+
+export default function MoodMemo({ trackName, trackSinger }: Props) {
   const [text, setText] = useState('');
   const addMemoItem = useMemoStore((state) => state.addMemoItem);
 
@@ -22,7 +27,7 @@ export default function MoodMemo() {
 
     if (text.trim() === '') return;
 
-    const memo = text;
+    const memo = `${trackName}@${trackSinger}@${text}`;
 
     addMemoItem({
       date,

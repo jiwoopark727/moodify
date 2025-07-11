@@ -1,10 +1,8 @@
 'use client';
 
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Header from 'Moodify/app/components/Header';
 import MoodMemo from 'Moodify/app/components/MoodMemo';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function TrackPage() {
@@ -82,7 +80,7 @@ export default function TrackPage() {
           )}
         </div>
         <div className='w-[95%]'>
-          <MoodMemo />
+          <MoodMemo trackName={trackName} trackSinger={trackSinger} />
         </div>
       </div>
     </div>
