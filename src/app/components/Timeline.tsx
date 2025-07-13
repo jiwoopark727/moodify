@@ -50,7 +50,7 @@ export default function Timeline() {
                 {item.date === todayDate ? (
                   <div className='w-6 h-6 bg-[#47703a] rounded-full z-10' />
                 ) : (
-                  <div className='w-3 h-3 ml-[6px] mr-[6px] bg-gray-400 rounded-full z-10' />
+                  <div className='w-3 h-3 ml-[5.5px] mr-[5.5px] bg-gray-400 rounded-full z-10' />
                 )}
                 {/* 세로선 */}
                 <div className='absolute top-[14px] w-[3px] bg-gray-400 h-full z-0' />

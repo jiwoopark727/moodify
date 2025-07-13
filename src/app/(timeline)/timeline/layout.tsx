@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '트랙 | Moodify',
-  description: 'Music made by Mood',
+  title: '타임라인',
 };
 
-export default function TrackLayout({
+export default function TimelineLayout({
   children,
 }: {
   children: React.ReactNode;
