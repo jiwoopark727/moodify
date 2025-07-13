@@ -45,6 +45,7 @@ export default function useFetchWeather() {
           setError(data.message || '날씨 정보 요청 실패');
         }
       } catch (err) {
+        console.log('날씨 API Error:', err);
         setError('날씨 정보를 가져오는 중 오류 발생');
       } finally {
         setLoading(false);

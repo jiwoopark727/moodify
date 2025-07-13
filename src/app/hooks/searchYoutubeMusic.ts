@@ -1,3 +1,12 @@
+type YouTubeSearchItem = {
+  id: {
+    videoId: string;
+  };
+  snippet: {
+    title: string;
+  };
+};
+
 export async function searchYoutubeMusic(query: string) {
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
   const maxResults = 6;
@@ -16,7 +25,7 @@ export async function searchYoutubeMusic(query: string) {
       return []; // 빈 배열로 fallback
     }
 
-    return data.items.map((item: any) => ({
+    return (data.items as YouTubeSearchItem[]).map((item) => ({
       videoId: item.id.videoId,
       title: item.snippet.title,
     }));

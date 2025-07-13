@@ -25,6 +25,7 @@ export async function GET(req: NextRequest) {
     const data = await res.json();
     return NextResponse.json(data.tracks.items);
   } catch (error) {
+    console.log('Spotify API Error:', error);
     return NextResponse.json({ error: 'Spotify 검색 실패' }, { status: 500 });
   }
 }

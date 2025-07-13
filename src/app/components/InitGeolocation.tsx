@@ -17,6 +17,7 @@ export default function InitGeolocation() {
         });
       },
       (err) => {
+        console.log('위치 정보 초기화 실패', err);
         console.error('위치 정보를 가져오지 못했어요.');
       },
       {
@@ -25,7 +26,7 @@ export default function InitGeolocation() {
         maximumAge: 0,
       }
     );
-  }, []);
+  }, [setCoords]);
 
   return null;
 }
