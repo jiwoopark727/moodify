@@ -1,11 +1,4 @@
-type YouTubeSearchItem = {
-  id: {
-    videoId: string;
-  };
-  snippet: {
-    title: string;
-  };
-};
+import { YouTubeSearchItem } from 'Moodify/types/youtube';
 
 export async function searchYoutubeMusic(query: string) {
   const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;

@@ -5,10 +5,11 @@ import { useKeywordStore } from '../stores/useKeywordStore';
 import Image from 'next/image';
 import Loader from './Loader';
 import { useRouter } from 'next/navigation';
+import { SpotifyTrack } from 'Moodify/types/spotify';
 
 export default function PlayList() {
   const keyword = useKeywordStore((state) => state.keyword);
-  const [tracks, setTracks] = useState<any[]>([]);
+  const [tracks, setTracks] = useState<SpotifyTrack[]>([]);
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
@@ -34,11 +35,12 @@ export default function PlayList() {
         console.error('음악 검색 실패:', err);
       } finally {
         setLoading(false);
-        console.log(tracks);
       }
     };
     fetchTracks();
   }, [keyword]);
+
+  console.log(tracks);
 
   return (
     <div>
@@ -52,7 +54,7 @@ export default function PlayList() {
           {tracks.map((track) => (
             <li key={track.id} className='flex items-center gap-4'>
               <Image
-                src={track.album.images[1].url}
+                src={track.album.images[1]?.url ?? track.album.images[0]?.url}
                 alt={track.name}
                 className='w-[35px] h-[35x]'
                 width={10}
