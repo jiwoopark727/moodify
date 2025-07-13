@@ -7,10 +7,10 @@ export default function PlayListPage() {
       <div className='w-[450px] h-[100vh] bg-[#fcfcfc] rounded-[70px] p-4 flex flex-col items-center'>
         {/* 헤더 */}
         <Header />
-        <h2 className='text-[20px] font-[600] self-start pl-[1.2vw]'>
+        <h2 className='text-[20px] font-[600] self-start pl-[4vw] mt-[2vh]'>
           🎧 Playlist
         </h2>
-        <div className='w-[90%] h-[72vh] flex flex-col items-start overflow-y-auto mt-5'>
+        <div className='w-[90%] h-[70vh] flex flex-col items-start overflow-y-auto mt-5'>
           <PlayList />
         </div>
       </div>
