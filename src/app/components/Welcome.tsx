@@ -46,7 +46,7 @@ export default function Welcome() {
           </span>
         </p>
 
-        <p className='mt-6 text-xl md:text-2xl font-semibold'>
+        <p className='mt-11 text-xl md:text-2xl font-semibold'>
           당신의 오늘 하루는 어땠나요?
         </p>
       </div>

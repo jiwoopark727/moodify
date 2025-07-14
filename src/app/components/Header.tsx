@@ -27,14 +27,18 @@ export default function Header() {
   return (
     <>
       <Logo />
-      <div className='w-full relative flex items-center justify-between text-[24px] font-medium'>
+
+      <div className='w-full relative flex items-center justify-between text-lg md:text-xl font-medium px-2 mt-2'>
+        {/* 뒤로가기 아이콘 */}
         <span
           onClick={handleBackClick}
-          className='ml-1 cursor-pointer px-3 py-2 text-[24px]'
+          className='ml-1 cursor-pointer px-2 py-1 md:px-3 md:py-2'
         >
           <FontAwesomeIcon icon={faArrowLeft} />
         </span>
-        <div className='absolute left-1/2 -translate-x-1/2'>
+
+        {/* 중앙 날짜 텍스트 */}
+        <div className='absolute left-1/2 -translate-x-1/2 text-md md:text-lg whitespace-nowrap'>
           <span className='mr-1.5'>{month}</span>
           <span className='mr-1.5'>{day}</span>
           <span

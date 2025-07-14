@@ -45,29 +45,31 @@ export default function PlayList() {
   return (
     <div>
       {loading ? (
-        <div className='flex flex-col justify-center items-center h-[60vh] w-[373px]'>
-          <p className='text-base mb-4'>플리를 생성하는 중입니다...</p>
+        <div className='flex flex-col justify-center items-center h-[60vh] w-[75vw] max-w-[373px] mx-auto'>
+          <p className='text-sm md:text-base mb-4'>
+            플리를 생성하는 중입니다...
+          </p>
           <Loader />
         </div>
       ) : (
         <ul className='space-y-4'>
           {tracks.map((track) => (
-            <li key={track.id} className='flex items-center gap-4'>
+            <li key={track.id} className='flex items-center gap-3 md:gap-4'>
               <Image
                 src={track.album.images[1]?.url ?? track.album.images[0]?.url}
                 alt={track.name}
-                className='w-[35px] h-[35x]'
+                className='w-[35px] h-[35px] rounded-md'
                 width={10}
                 height={10}
               />
               <div className='flex items-center justify-between w-full'>
-                <div>
-                  <p className='text-[16px] pl-1'>{track.name}</p>
-                  <p className='text-[16px] text-gray-500 pl-1'>
+                <div className='flex flex-col'>
+                  <p className='text-sm md:text-base pl-1'>{track.name}</p>
+                  <p className='text-sm md:text-base text-gray-500 pl-1'>
                     {track.artists[0].name}
                   </p>
                 </div>
-                <div className='shrink-0 '>
+                <div className='shrink-0 ml-2'>
                   {track.preview_url ? (
                     <audio controls src={track.preview_url} />
                   ) : (
@@ -75,7 +77,7 @@ export default function PlayList() {
                       onClick={() =>
                         handleYoutubeClick(track.name, track.artists[0].name)
                       }
-                      className='text-[#4F7942] underline text-[16px] cursor-pointer p-3 font-semibold'
+                      className='text-[#4F7942] underline text-sm md:text-base cursor-pointer px-2 py-1 md:px-3 font-semibold'
                     >
                       YouTube로 듣기
                     </button>

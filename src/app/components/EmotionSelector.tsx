@@ -22,12 +22,12 @@ export default function EmotionSelector() {
   const { emotion, setEmotion } = useEmotionStore();
 
   return (
-    <div className='w-[60%] max-w-sm grid grid-cols-2 gap-y-8 md:gap-y-[5.5rem] justify-items-center mt-6 md:mt-10'>
+    <div className='w-[60%] max-w-sm grid grid-cols-2 gap-y-9 md:gap-y-[5.5rem] justify-items-center mt-6 md:mt-10'>
       {EMOTIONS.map((item) => (
         <button
           key={item.mood}
           onClick={() => setEmotion(item.mood)}
-          className={`rounded-[28px] border-2 px-2 pt-2 text-3xl md:text-[34px] cursor-pointer transition-all duration-200 ${
+          className={`rounded-[28px] border-2 px-[2px] pt-[6px] pb-[2px] text-3xl md:text-[34px] cursor-pointer transition-all duration-200 ${
             emotion === item.mood ? 'border-[#4F7942]' : 'border-transparent'
           }`}
         >

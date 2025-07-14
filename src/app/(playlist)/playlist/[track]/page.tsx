@@ -44,8 +44,8 @@ export default function TrackPage() {
   }
 
   return (
-    <div className='min-h-[100dvh] w-full flex items-center justify-center'>
-      <div className='w-full max-w-[450px] h-[100dvh] bg-[#fcfcfc] rounded-2xl p-4 flex flex-col items-center'>
+    <div className='min-h-[100dvh] w-full flex items-center justify-center bg-gray-300'>
+      <div className='w-full max-w-[450px] h-[100dvh] bg-[#fcfcfc] p-4 flex flex-col items-center'>
         {/* 헤더 */}
         <Header />
         {/* 유튜브 영상 */}
