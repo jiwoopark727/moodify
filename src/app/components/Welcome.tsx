@@ -27,23 +27,29 @@ export default function Welcome() {
   return (
     <>
       <Logo />
-      <p className='flex justify-center mt-[1vh] font-semibold text-[32px]'>
-        {greeting}
-      </p>
-      <p className='flex justify-center text-[20px] mt-[1vh]'>
-        <span className='mr-1.5'>{month}</span>
-        <span className='mr-1.5'>{day}</span>
-        <span
-          className={`${
-            weekday === '토요일' ? 'text-[#2b5bf7]' : 'text-black'
-          } ${weekday === '일요일' ? 'text-[#f83b3b]' : 'text-black'}`}
-        >
-          {weekday}
-        </span>
-      </p>
-      <p className='flex justify-center mt-[5vh] text-[24px] font-semibold'>
-        당신의 오늘 하루는 어땠나요?
-      </p>
+      <div className='text-center mt-4'>
+        <p className='font-semibold text-2xl md:text-3xl'>{greeting}</p>
+
+        <p className='text-lg md:text-xl mt-2'>
+          <span className='mr-1.5'>{month}</span>
+          <span className='mr-1.5'>{day}</span>
+          <span
+            className={`${
+              weekday === '토요일'
+                ? 'text-[#2b5bf7]'
+                : weekday === '일요일'
+                ? 'text-[#f83b3b]'
+                : 'text-black'
+            }`}
+          >
+            {weekday}
+          </span>
+        </p>
+
+        <p className='mt-6 text-xl md:text-2xl font-semibold'>
+          당신의 오늘 하루는 어땠나요?
+        </p>
+      </div>
     </>
   );
 }

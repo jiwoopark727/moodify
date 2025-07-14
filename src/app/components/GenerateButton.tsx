@@ -57,7 +57,7 @@ export default function ValidationButton() {
           handleGenerateClick();
           handleGenerateClick2();
         }}
-        className='mt-[4vh] text-[18px] cursor-pointer border-2 border-[#4F7942] px-5 py-2.5 rounded-xl hover:bg-[#4F7942] hover:text-[#fff]'
+        className='mt-6 md:mt-[4vh] text-base md:text-lg cursor-pointer border-2 border-[#4F7942] px-4 py-2 md:px-6 md:py-3 rounded-xl hover:bg-[#4F7942] hover:text-white transition-all duration-300'
       >
         생성
       </button>
