@@ -37,7 +37,7 @@ export default function Timeline() {
   }
 
   return (
-    <div className='flex justify-end mt-[5vh] w-[88%] overflow-y-auto h-[75vh]'>
+    <div className='flex justify-end mt-4 md:mt-6 w-full max-w-[90%] overflow-y-auto max-h-[68vh] mx-auto'>
       <div className='w-full space-y-4'>
         {timeline
           .slice()
@@ -45,21 +45,21 @@ export default function Timeline() {
           .map((item, idx) => (
             <div key={idx} className='flex items-start relative'>
               {/* 왼쪽 상태 표시줄 */}
-              <div className='flex flex-col items-center mr-5'>
+              <div className='flex flex-col items-center mr-4 min-w-[24px]'>
                 {/* 동그라미 점 */}
                 {item.date === todayDate ? (
-                  <div className='w-6 h-6 bg-[#47703a] rounded-full z-10' />
+                  <div className='w-5 h-5 bg-[#47703a] rounded-full z-10' />
                 ) : (
-                  <div className='w-3 h-3 ml-[5.5px] mr-[5.5px] bg-gray-400 rounded-full z-10' />
+                  <div className='w-2.5 h-2.5 ml-[5.5px] mr-[5.5px] bg-gray-400 rounded-full z-10' />
                 )}
                 {/* 세로선 */}
-                <div className='absolute top-[14px] w-[3px] bg-gray-400 h-full z-0' />
+                <div className='absolute top-[14px] w-[2px] bg-gray-400 h-full z-0' />
               </div>
 
               {/* 오른쪽 내용 박스 */}
-              <div className='relative border p-3 rounded-lg shadow-sm w-full'>
+              <div className='relative border p-3 rounded-lg shadow-sm w-full md:w-[calc(100%-40px)]'>
                 {/* 감정 이모지 */}
-                <div className='absolute top-1/2 right-2 transform -translate-y-1/2 text-[40px]'>
+                <div className='absolute top-1/2 right-2 transform -translate-y-1/2 text-3xl md:text-4xl'>
                   {EMOTIONS.map((item2) =>
                     item.emotion === item2.emotion ? (
                       <span key={item2.emotion}>{item2.emoji}</span>
@@ -68,15 +68,15 @@ export default function Timeline() {
                 </div>
 
                 {/* 내용 텍스트 */}
-                <p>📅 {item.date}</p>
-                <p>
-                  ⏰ {item.time} 💚 {item.weather}
+                <p className='text-sm md:text-base'>📅 {item.date}</p>
+                <p className='text-sm md:text-base'>
+                  {item.time} - 날씨: {item.weather}
                 </p>
 
-                <div className='w-[75%]'>
+                <div className='w-[80%] md:w-[78%]'>
                   {memo.map((item2, idx2) =>
                     item.date === item2.date ? (
-                      <div key={idx2}>
+                      <div key={idx2} className='text-sm md:text-base'>
                         <p>
                           🎵 {item2.memo.split('@')[0]} -{' '}
                           {item2.memo.split('@')[1]}
