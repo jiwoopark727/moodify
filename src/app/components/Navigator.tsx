@@ -41,7 +41,7 @@ export default function Navigation() {
                 handleTodayClick();
                 setNavigator('today');
               }}
-              className='w-full h-full text-lg md:text-xl transition-all active:scale-95 rounded-t-sm'
+              className='w-full h-full cursor-pointer text-lg md:text-xl transition-all active:scale-90 rounded-t-sm'
             >
               투데이
             </button>
@@ -60,7 +60,7 @@ export default function Navigation() {
                 handleTimelineClick();
                 setNavigator('timeline');
               }}
-              className='w-full h-full text-lg md:text-xl transition-all active:scale-95 rounded-t-sm'
+              className='w-full h-full cursor-pointer text-lg md:text-xl transition-all active:scale-95 rounded-t-sm'
             >
               타임라인
             </button>
