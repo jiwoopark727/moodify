@@ -27,7 +27,7 @@ export default function EmotionSelector() {
         <button
           key={item.mood}
           onClick={() => setEmotion(item.mood)}
-          className={`rounded-[28px] border-2 px-[2px] pt-[6px] pb-[2px] text-3xl md:text-[34px] cursor-pointer transition-all duration-200 ${
+          className={`rounded-[28px] border-2 px-[2px] pt-[4px] pb-[1px] text-3xl md:text-[34px] cursor-pointer transition-all duration-200 ${
             emotion === item.mood ? 'border-[#4F7942]' : 'border-transparent'
           }`}
         >
