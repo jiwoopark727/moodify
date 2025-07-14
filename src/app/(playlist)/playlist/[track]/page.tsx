@@ -50,36 +50,38 @@ export default function TrackPage() {
         <Header />
         {/* 유튜브 영상 */}
         {videoId ? (
-          <iframe
-            width='400'
-            height='225'
-            src={`https://www.youtube.com/embed/${videoId}?rel=0`}
-            title='YouTube Video'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture web-share;'
-            allowFullScreen
-            className='rounded-[20px] mt-[3vh]'
-            loading='lazy'
-            rel='0'
-          />
+          <div className='w-[95%] aspect-video mt-4 rounded-[20px]'>
+            <iframe
+              width='400'
+              height='225'
+              src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+              title='YouTube Video'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture web-share;'
+              allowFullScreen
+              className='w-full h-full rounded-[20px]'
+              loading='lazy'
+              rel='0'
+            />
+          </div>
         ) : (
-          <div className='w-[400px] h-[225px] bg-gray-300 rounded-[20px] mt-[3vh]'></div>
+          <div className='w-[95%] aspect-video bg-gray-300 rounded-[20px] mt-4'></div>
         )}
         {/* 유튜브 영상 정보 */}
-        <div className='w-full mt-[1.5vh] px-4 mb-[2vh]'>
-          <p className='text-[20px] text-left mb-[0.5vh]'>
+        <div className='w-full mt-3 px-2 mb-4'>
+          <p className='text-base md:text-lg font-semibold mb-1 pl-2'>
             {trackName} - {trackSinger}
           </p>
           {viewCount && publishedAt ? (
-            <span className='text-[18px] text-gray-600'>
+            <span className='text-sm md:text-base text-gray-600 pl-2'>
               {Number(viewCount).toLocaleString()}
-              <span className='ml-[2px]'>회</span>&nbsp; &nbsp;
+              <span className='ml-1'>회</span>&nbsp; &nbsp;
               {formatDateToRelative(publishedAt)}
             </span>
           ) : (
-            <p className='w-[225px] h-[22px] bg-gray-300 rounded-[20px]'></p>
+            <p className='w-[60%] h-[22px] bg-gray-300 rounded-[20px]'></p>
           )}
         </div>
-        <div className='w-[95%]'>
+        <div className='w-full px-2'>
           <MoodMemo trackName={trackName} trackSinger={trackSinger} />
         </div>
       </div>
