@@ -100,7 +100,7 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
   <tr>
     <td align="center">
       <p>타임라인 화면</p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_timeline" height="500" alt="타임라인 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_timeline.png" height="500" alt="타임라인 화면">
     </td>
   </tr>
 </table>
