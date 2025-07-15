@@ -110,7 +110,51 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
 ## 🏗 폴더 구조
 
 ````plaintext
-📦 root
+📦 app/
+├── home/
+│   ├── layout.tsx
+│   └── page.tsx
+├── playlist/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── [track]/
+│       ├── layout.tsx
+│       └── page.tsx
+├── timeline/
+│   ├── layout.tsx
+│   └── page.tsx
+├── api/
+│   ├── spotify/
+│   │   └── search/
+│   │       └── route.ts
+│   └── youtube/
+│       └── search/
+│           └── route.ts
+├── components/
+│   ├── EmotionSelector.tsx
+│   ├── GenerateButton.tsx
+│   ├── Header.tsx
+│   ├── Playlist.tsx
+│   └── ...
+├── hooks/
+│   ├── generateMusicKeyword.ts
+│   ├── useFetchWeather.ts
+│   └── ...
+├── lib/
+│   ├── fontawesome.ts
+│   ├── spotify.ts
+│   └── ...
+├── stores/
+│   ├── useEmotionStore.ts
+│   ├── useGeolocationStore.ts
+│   ├── useKeywordStore.ts
+│   └── ...
+├── types/
+│   ├── spotify.ts
+│   ├── youtube.ts
+│   └── ...
+├── layout.tsx
+├── page.tsx
 
 
 
