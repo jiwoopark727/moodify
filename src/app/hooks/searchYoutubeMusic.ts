@@ -1,7 +1,7 @@
 import { YouTubeSearchItem } from 'Moodify/types/youtube';
 
 export async function searchYoutubeMusic(query: string) {
-  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+  const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY2;
   const maxResults = 6;
 
   const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${encodeURIComponent(

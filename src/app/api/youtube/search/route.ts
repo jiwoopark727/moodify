@@ -8,7 +8,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Missing query' }, { status: 400 });
   }
 
-  const apiKey = process.env.YOUTUBE_API_KEY;
+  const apiKey = process.env.YOUTUBE_API_KEY2;
   const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&q=${encodeURIComponent(
     query
   )}&key=${apiKey}`;
