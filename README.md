@@ -80,27 +80,27 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
   <tr>
     <td align="center">
       <p><홈(초기) 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_home.png" height="230" alt="홈 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_home.png" height="500" alt="홈 화면">
     </td>
     <td align="center">
       <p><플레이리스트(생성 완료 시) 완료 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_playlist.png" height="230" alt="플레이리스트 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_playlist.png" height="500" alt="플레이리스트 화면">
     </td>
   </tr>
   <tr>
     <td align="center">
       <p><트랙(음악 선택 시) 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_track.png" height="230" alt="트랙 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_track.png" height="500" alt="트랙 화면">
     </td>
     <td align="center">
       <p><트랙(메모 입력) 화면></p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_memo.png" height="230" alt="트랙_메모 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_memo.png" height="500" alt="트랙_메모 화면">
     </td>
   </tr>
   <tr>
     <td align="center">
       <p>타임라인 화면</p>
-      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_timeline" height="230" alt="타임라인 화면">
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_timeline" height="500" alt="타임라인 화면">
     </td>
   </tr>
 </table>
