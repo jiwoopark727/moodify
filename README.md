@@ -11,37 +11,50 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
 
 ## ⚙️ 핵심 기능
 
-### ✅ 위치 기반 날씨 감지  
+### ✅ 위치 기반 날씨 감지
+
 - 브라우저 Geolocation API → OpenWeather API를 통해 현재 위치의 날씨 자동 조회
 
-### ✅ 감정 선택 및 키워드 생성  
-- 이모지 기반 감정 선택 UI  
+### ✅ 감정 선택 및 키워드 생성
+
+- 이모지 기반 감정 선택 UI
 - Zustand 상태 관리 → 감정 + 날씨 조합 기반 키워드 생성
 
-### ✅ 음악 추천  
-- Spotify API: 키워드로 음악 검색 후 리스트 출력  
+### ✅ 음악 추천
+
+- Spotify API: 키워드로 음악 검색 후 리스트 출력
 - YouTube API: preview_url이 없는 경우 자동 대체 영상 임베드
 
-### ✅ 타임라인 기능  
-- 감정, 날씨, 날짜, 시간, 메모를 로컬스토리지 기반으로 저장  
-- 같은 날짜는 기존 기록을 덮어쓰기 (중복 방지 로직 적용)  
+### ✅ 타임라인 기능
+
+- 감정, 날씨, 날짜, 시간, 메모를 로컬스토리지 기반으로 저장
+- 같은 날짜는 기존 기록을 덮어쓰기 (중복 방지 로직 적용)
 - 메모 기능 추가: 감성 기록 남기기
 
-### ✅ 모바일 UI 최적화  
-- 450px 기준 카드형 반응형 디자인  
+### ✅ 모바일 UI 최적화
+
+- 450px 기준 카드형 반응형 디자인
 - Tailwind CSS 활용한 직관적인 레이아웃
+
+### ✅ PWA 지원
+
+- 모바일 및 데스크탑 브라우저에서 앱처럼 설치 가능
+- 홈 화면 추가 및 Splash 화면 적용
+- next-pwa를 사용해 서비스 워커 설정, 캐시 전략 최적화
+- 오프라인 환경에서도 기본 UI 자산 접근 가능
 
 ---
 
 ## 💻 기술 스택
 
-| 역할 | 기술 |
-|------|------|
-| Frontend | **React 19**, **Next.js 15 (App Router)**, **TypeScript** |
-| Styling | **Tailwind CSS**, **Emotion** |
-| 상태 관리 | **Zustand** (+ persist middleware) |
-| API 활용 | **Spotify API**, **YouTube Data API**, **OpenWeather API** |
-| 배포 | **Vercel** |
+| 역할      | 기술                                                                  |
+| --------- | --------------------------------------------------------------------- |
+| Frontend  | **React 19**, **Next.js 15 (App Router)**, **TypeScript**             |
+| Styling   | **Tailwind CSS**, **Emotion**                                         |
+| 상태 관리 | **Zustand** (+ persist middleware)                                    |
+| API 활용  | **Spotify API**, **YouTube Data API**, **OpenWeather API**            |
+| 배포      | **Vercel**                                                            |
+| PWA       | **next-pwa** 기반의 Progressive Web App 기능 지원 (설치형 웹 앱 구현) |
 
 ---
 
@@ -63,9 +76,9 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
 
 ## 📌 배운 점 및 성과
 
-- 상태 관리 흐름, API 인증 처리, UI 구성 등 프론트엔드 실무 경험 강화  
-- Zustand + LocalStorage를 활용한 사용자 감정 기록 기능 구현  
-- 사용자의 맥락을 기반으로 한 음악 추천 로직 설계 및 적용  
+- 상태 관리 흐름, API 인증 처리, UI 구성 등 프론트엔드 실무 경험 강화
+- Zustand + LocalStorage를 활용한 사용자 감정 기록 기능 구현
+- 사용자의 맥락을 기반으로 한 음악 추천 로직 설계 및 적용
 - 음악 감상 → 감정 기록 → 타임라인 저장까지의 자연스러운 UX 구성
 
 ---
