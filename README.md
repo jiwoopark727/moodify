@@ -113,6 +113,10 @@ Moodify는 사용자의 현재 **날씨**와 **감정 상태**를 기반으로 �
       <p>타임라인 화면</p>
       <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_timeline.png" height="500" alt="타임라인 화면">
     </td>
+        <td align="center">
+      <p>PWA 앱 설치 팝업</p>
+      <img src="https://raw.githubusercontent.com/jiwoopark727/Moodify/main/public/assets/images/moodify_install.png" height="500" alt="타임라인 화면">
+    </td>
   </tr>
 </table>
 

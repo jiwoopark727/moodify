@@ -5,7 +5,7 @@
   "lang": "ko",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#f2f2f2",
   "theme_color": "#4F7942",
   "orientation": "portrait",
   "icons": [
