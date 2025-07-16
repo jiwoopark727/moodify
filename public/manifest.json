@@ -1,0 +1,23 @@
+{
+  "name": "Moodify",
+  "short_name": "Moodify",
+  "description": "날씨와 감정을 기반으로 음악을 추천해주는 감성 큐레이션 웹사이트",
+  "lang": "ko",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F7942",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon_12.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

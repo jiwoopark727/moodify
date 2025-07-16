@@ -1,9 +1,14 @@
+import withPWA from 'next-pwa';
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {
+const baseConfig: NextConfig = {
   images: {
     domains: ['openweathermap.org', 'i.scdn.co'],
   },
 };
 
-export default nextConfig;
+export default withPWA({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+})(baseConfig);

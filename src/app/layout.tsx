@@ -8,6 +8,11 @@ export const metadata: Metadata = {
     default: 'Moodify',
   },
   description: 'Music made by Mood',
+  icons: {
+    icon: '/icons/icon_192.png',
+    apple: '/icons/icon_192.png',
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
