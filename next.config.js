@@ -1,13 +1,13 @@
-import withPWA from 'next-pwa';
-import type { NextConfig } from 'next';
+const withPWA = require('next-pwa');
 
-const baseConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const baseConfig = {
   images: {
     domains: ['openweathermap.org', 'i.scdn.co'],
   },
 };
 
-export default withPWA({
+module.exports = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
